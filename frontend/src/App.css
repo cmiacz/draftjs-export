@@ -1,4 +1,29 @@
-.App {
-  text-align: center;
+body {
+  font-size: 15px;
+  line-height: 1.4;
+  font-family: 'Open Sans', sans-serif;
+  color: #555;
 }
 
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.editor {
+  width: 50em;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  cursor: text;
+  padding: 16px;
+  border-radius: 2px;
+  margin-bottom: 2em;
+  box-shadow: inset 0px 1px 8px -3px #ABABAB;
+  background: #fefefe;
+}
+
+.editor :global(.public-DraftEditor-content) {
+  min-height: 10em;
+}
