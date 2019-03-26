@@ -5,6 +5,8 @@ import createToolbarPlugin from 'draft-js-static-toolbar-plugin';
 import 'draft-js-static-toolbar-plugin/lib/plugin.css';
 import './App.css';
 
+import exportEditorContent from './utils';
+
 
 const staticToolbarPlugin = createToolbarPlugin();
 const { Toolbar } = staticToolbarPlugin;
@@ -36,7 +38,7 @@ class App extends Component {
           />
           <Toolbar />
         </div>
-        <button>
+        <button onClick={() => exportEditorContent({test: 123})} >
           Export to docx
         </button>
       </div>

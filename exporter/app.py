@@ -1,13 +1,16 @@
 import io
 import docx
-from flask import Flask, send_file
+from flask import Flask, request, send_file
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
 
 
-@app.route("/export", methods=["GET", "POST"])
+@app.route("/api/export", methods=["POST"])
 def export_draftjs_content():
+    content = request.json
+    print("Recieved content:", content)
+
     doc_stream = io.BytesIO()
 
     document = docx.Document()
